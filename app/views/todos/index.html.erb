@@ -1,0 +1,20 @@
+<div class="jumbotron">
+<%= link_to "New Todo Item", new_todo_path, class: "btn btn-primary btn-xs btn-block" %>
+</div>
+
+<div class="block">
+   <% @todos.each do |todo| %>
+   <p> <%= todo.description %></p>
+   <p class="dim"><%="#{days_left_to_complete(todo)}"%></p>
+   <p><%= link_to "Click to complete", { action: "destroy", id: todo.id },
+                 method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %></p>
+
+ <footer class="border">
+       
+      </footer>
+
+    <% end %>
+</div>
+
+
+

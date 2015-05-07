@@ -1,0 +1,4 @@
+SENDGRID_PASSWORD: passwordexample
+SENDGRID_USERNAME: usernameexample
+SECRET_KEY_BASE: secretkeybaseexamplerunrakesecretogenerateanewkey
+DEVISE_SECRET_KEY: devisesecretkey
