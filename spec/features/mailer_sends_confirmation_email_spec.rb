@@ -12,8 +12,6 @@ feature "sign up" do
     click_first_link_in_email
     expect(page).to have_content('Your email address has been successfully confirmed')
     sign_in(user.email, user.password)
-    expect(page).to have_text("Sign out")
+    expect(page).to have_link("Sign Out")
   end
   end
-
-  

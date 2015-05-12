@@ -57,6 +57,7 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'email_spec' 
   gem 'action_mailer_cache_delivery', '~> 0.3.7'
+  gem 'test-unit'
 end
 
 # Use ActiveModel has_secure_password
