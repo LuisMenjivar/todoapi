@@ -3,6 +3,12 @@ Todolist::Application.routes.draw do
   devise_for :users 
   #resources :todos
   resources :todos, except: [:show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :todos, only: [:destroy, :create, :index]
+    end
+  end
   #, only: [:new, :create, :show, :index, :destroy]
 
   #root to: 'todos#index'
