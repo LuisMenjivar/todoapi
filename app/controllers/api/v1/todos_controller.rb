@@ -4,7 +4,7 @@ class Api::V1::TodosController < ApiController
   def index
     todos = @current_user.todos
     # render json: todos
-    render json: todos, each_serializer: TodoSerializer 
+    render json: todos
   end                          
 
   def create
@@ -33,10 +33,10 @@ class Api::V1::TodosController < ApiController
     
   def restrict_access
     authenticate_or_request_with_http_token do |token, options|
-      if ApiKey.exists?(access_token: token)
-        @current_user = ApiKey.find_by_access_token(token).user
+      if Apikey.exists?(access_key: token)
+        @current_user = Apikey.find_by_access_key(token).user
       else
-         render json: :bad_request
+         render json: {error: "fgdfgfdgfdgfdgfdgfdhgn"}, status: :bad_request
       end
     end 
   end
