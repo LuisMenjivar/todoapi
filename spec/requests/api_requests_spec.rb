@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe "get index request " do 
   before(:example) do |example|
-    @user = create(:user, email: "test@example.com")
+    @user = create(:user)
     @apikey = Apikey.create(user: @user, access_key: SecureRandom.hex)
   end
   it "creates a todo" do 

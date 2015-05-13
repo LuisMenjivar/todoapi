@@ -1,3 +1,5 @@
+devise edit view
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -26,4 +28,15 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
+
+    <%= form_tag access_key_path, controller: 'apikey', method: 'post' do %>
+      <% if current_user.apikey %>
+              <%= submit_tag "Change your Access Token"  %>
+              <p>This is your access token:</p><p> <%= current_user.apikey.access_key %></p>
+              
+      <% else %>
+              <%= submit_tag "Get An Access Token"  %>
+      <% end %>
+    <% end %>
+</br>
 <%= link_to "Back", :back %>
