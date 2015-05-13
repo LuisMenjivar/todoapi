@@ -31,11 +31,11 @@ devise edit view
 
     <%= form_tag access_key_path, controller: 'apikey', method: 'post' do %>
       <% if current_user.apikey %>
-              <%= submit_tag "Change your Access Token"  %>
-              <p>This is your access token:</p><p> <%= current_user.apikey.access_key %></p>
+              <%= submit_tag "Change Your Api Key"  %>
+              <p>This is your Api Key:</p><p> Token token=<%= current_user.apikey.access_key %></p>
               
       <% else %>
-              <%= submit_tag "Get An Access Token"  %>
+              <%= submit_tag "Get An Api Key"  %>
       <% end %>
     <% end %>
 </br>
