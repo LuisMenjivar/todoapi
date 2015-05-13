@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208113940) do
+ActiveRecord::Schema.define(version: 20150512210540) do
+
+  create_table "apikeys", force: true do |t|
+    t.string   "access_key"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apikeys", ["user_id"], name: "index_apikeys_on_user_id"
 
   create_table "todos", force: true do |t|
     t.string   "description"
