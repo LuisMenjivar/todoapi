@@ -3,8 +3,8 @@ class Api::V1::TodosController < ApiController
 
   def index
     todos = @current_user.todos
-    # render json: todos
     render json: todos
+
   end                          
 
   def create
@@ -19,7 +19,7 @@ class Api::V1::TodosController < ApiController
   def destroy
     if todo = @current_user.todos.find_by_id(params[:id])
     todo.destroy    
-    render json: :accepted
+    render json: {message: "todo with id: #{params[:id]} was deleted successfully"}, status: :accepted
     else
     render json: :bad_request
     end
@@ -36,7 +36,7 @@ class Api::V1::TodosController < ApiController
       if Apikey.exists?(access_key: token)
         @current_user = Apikey.find_by_access_key(token).user
       else
-         render json: {error: "fgdfgfdgfdgfdgfdgfdhgn"}, status: :bad_request
+         render json: {error: "Make sure you have the correct access token"}, status: :bad_request
       end
     end 
   end
