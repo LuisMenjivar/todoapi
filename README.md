@@ -1,13 +1,12 @@
-[Visit the production page here](https://luistodolist.herokuapp.com/users/sign_up)<br>
+[Visit the production page here](https://luistodoapi.herokuapp.com/)<br>
 
-+ I am using the gem Devise for user authentication and Sendgrid for mail deliveries.
+This is a simple API written in Ruby using the Rails framework. 
 
-+ I am using Scheduler from heroku to run the rake task that deletes todos after 7 days after they are created. 
+To get this api running:
 
-+ Users have only one todo list. Users have many todo items. Only using User and Todo models. 
-
-+ Using figaro to hide username and passwords in application.yml folder. <br>
-
-sign in as <br>
-username:   standard@example.com<br>
-password:   helloworld
+1. Clone repo ```git clone https://github.com/LuisMenjivar/todoapi.git```
+(run ``` rm -rf .git ```  to remove git history )
+2. Run ``` bundle install ```
+3. Run ``` figaro instal ``` [Figaro](https://github.com/laserlemon/figaro)<br> is a gem that helps you manage sensitive information using ENV and a YML file.
+   ```figaro install``` will create the YAML hidden file in which you will put your sensitive information in this form:   ```MAILGUN_SMTP_PASSWORD: 'your secret key' ```. Wherever you have to use ```your secret key``` you use it in this form using ENV:  ```ENV['MAILGUN_SMTP_PASSWORD']```
+4. Run ```rake db: ```
