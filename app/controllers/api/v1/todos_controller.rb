@@ -4,11 +4,10 @@ class Api::V1::TodosController < ApiController
   def index
     todos = @current_user.todos
     render json: todos
-
   end                          
 
   def create
-    todo = @current_user.todos.create(todo_params)
+    todo = @current_user.todos.build(todo_params)
     if todo.save
       render json: todo, status: :created
     else
@@ -18,10 +17,10 @@ class Api::V1::TodosController < ApiController
 
   def destroy
     if todo = @current_user.todos.find_by_id(params[:id])
-    todo.destroy    
-    render json: {message: "todo with id: #{params[:id]} was deleted successfully"}, status: :accepted
+      todo.destroy    
+      render json: {message: "todo with id: #{params[:id]} was deleted successfully"}, status: :accepted
     else
-    render json: :bad_request
+      render json: :bad_request
     end
   end
 
