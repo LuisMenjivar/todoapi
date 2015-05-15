@@ -1,4 +1,6 @@
-class ApikeyController < ApplicationController 
+class ApikeyController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     if current_user.apikey
       current_user.apikey.update_attributes(access_key: SecureRandom.hex)
