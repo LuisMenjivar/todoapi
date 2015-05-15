@@ -17,10 +17,10 @@ class Api::V1::TodosController < ApiController
 
   def destroy
     if todo = @current_user.todos.find_by_id(params[:id])
-      todo.destroy    
+      todo.destroy
       render json: {message: "todo with id: #{params[:id]} was deleted successfully"}, status: :accepted
-    else
-      render json: :bad_request
+    elsif 
+      render json: {message: "bad request check your todo's id"}, status: :bad_request
     end
   end
 
