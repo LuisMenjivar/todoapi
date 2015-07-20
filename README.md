@@ -45,6 +45,6 @@ At this point your application should be running well on production.
 
 # How to use the API 
 You need an authorization token to make API requests. You can find your token by clicking the Account navigation link. For example 
-    curl https://luistodoapi.herokuapp.com/api/v1/todos -H 'Authorization: Token token=1d72f1f6a4f81b123b954d558e4168ff"'
+    ```curl https://luistodoapi.herokuapp.com/api/v1/todos -H 'Authorization: Token token=1d72f1f6a4f81b123b954d558e4168ff"'```
 
 
