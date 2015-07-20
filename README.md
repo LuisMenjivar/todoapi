@@ -1,3 +1,4 @@
+# How to set up the application
 [Visit the production page here](https://luistodoapi.herokuapp.com/)<br>
 
 This is a simple API written in Ruby using the Rails framework. 
@@ -41,5 +42,9 @@ I am assuming you have an account with Heroku. If not [Click here](https://signu
 16. Run ```heroku run rake db:migrate``` to migrate the data base in heroku.
 
 At this point your application should be running well on production. 
+
+# How to use the API 
+You need an authorization token to make API requests. You can find your token by clicking the Account navigation link. For example 
+    curl https://luistodoapi.herokuapp.com/api/v1/todos -H 'Authorization: Token token=1d72f1f6a4f81b123b954d558e4168ff"'
 
 

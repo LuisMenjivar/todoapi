@@ -30,13 +30,14 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>Welcome to the TodoList application!</h1>
-        <p class="lead">The only application on the web that will complete your todo list. Need to do Homework, do laundry, go to the bank and don't have the time?. No problem, just type your Todo item and the application will take care of the rest. Each todo item will automatically be completed after seven days.</p>
+        <h1>Welcome to the TodoList API</h1>
+        <p class="lead">This is a Todo API. Sign up or Sign in using <b>stardard@example.com</b> and <b>helloworld</b></br>Click Account to get an Authorization token. Use the authorization token everytime you make an API request, for example: <b>curl https://luistodoapi.herokuapp.com/api/v1/todos -H 'Authorization: Token token=1d72f1f6a4f81b123b954d558e4168ff"'</b></p></br>
+        <p><a href="https://github.com/LuisMenjivar/todoapi">Github Homepage</a></p>
         <% if current_user %>
          <p><%= link_to "Get started", todos_path, class: "btn btn-lg btn-success" %> </p>
         <% else %>
-         <p><a class="btn btn-lg btn-success" href="/users/sign_up" role="button">Sign up now and find out what everyone is talking about</a></p>
-         <p><a class="btn btn-lg btn-primary" href="/users/sign_in" role="button">Already a member click here to sign in</a></p>
+         <p><a class="btn btn-lg btn-success" href="/users/sign_up" role="button">Sign up now</a></p>
+         <p><a class="btn btn-lg btn-primary" href="/users/sign_in" role="button">Sign in</a></p>
 
         <%end%>
       </div>
